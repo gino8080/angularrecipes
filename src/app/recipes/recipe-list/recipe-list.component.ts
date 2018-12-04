@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Recipe } from './recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -6,8 +7,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
+  ricetta: Recipe = new Recipe(
+    "Patate riso e cozze",
+    "Lorem ipsum dsa dsa ",
+    "https://ips.plug.it/cips/buonissimo.org/cms/2012/04/tiella-di-riso-patate-e-cozze.jpg"
+  );
+  ricetta2: Recipe = new Recipe(
+    "Spaghetti",
+    "Lorem ipsum dsa dsa ",
+    "https://loremflickr.com/320/240/spaghetti"
+  );
+  ricetta3: Recipe = new Recipe(
+    "Food dsadsa",
+    "Lorem ipsum dsa dsa ",
+    "https://loremflickr.com/640/340/food"
+  );
 
-  constructor() { }
+  ingredients  = {
+    nome : "Aglio",
+    peso : "5g"
+  };
+
+  recipes: Recipe[] = [
+    this.ricetta,
+    this.ricetta2,
+    this.ricetta3
+     ];
+
+  constructor() {
+
+   }
 
   ngOnInit() {
   }
