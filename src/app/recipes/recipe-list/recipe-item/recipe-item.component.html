@@ -3,6 +3,8 @@
     <div class="card-body">
         <h5 class="card-title">{{currentRicetta.name}}</h5>
         <p class="card-text">{{currentRicetta.description}}</p>
-        <a href="#" class="btn btn-primary"> Vedi</a>
+        <a href="#" class="btn btn-primary">
+            <app-like [isLiked]="currentRicetta.liked"></app-like>
+        </a>
     </div>
 </div>

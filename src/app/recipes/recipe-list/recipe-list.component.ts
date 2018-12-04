@@ -15,7 +15,8 @@ export class RecipeListComponent implements OnInit {
   ricetta2: Recipe = new Recipe(
     "Spaghetti",
     "Lorem ipsum dsa dsa ",
-    "https://loremflickr.com/320/240/spaghetti"
+    "https://loremflickr.com/320/240/spaghetti",
+    true
   );
   ricetta3: Recipe = new Recipe(
     "Food dsadsa",
