@@ -9,6 +9,7 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { LikeComponent } from './like/like.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { RecipesService } from './recipes.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [RecipesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
