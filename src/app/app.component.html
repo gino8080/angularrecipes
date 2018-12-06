@@ -3,10 +3,10 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <app-recipe-list></app-recipe-list>
+            <app-recipe-list (selectedRecipe)="onSelectedRecipe($event)"></app-recipe-list>
         </div>
         <div class="col">
-            <app-recipe-detail></app-recipe-detail>
+            <app-recipe-detail [currentRicetta]="selectedRecipe"></app-recipe-detail>
         </div>
     </div>
 </div>
