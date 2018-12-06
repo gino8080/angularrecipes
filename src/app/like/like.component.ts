@@ -9,8 +9,12 @@ export class LikeComponent implements OnInit {
 
   @Input()  isLiked = false;
 
-  clickedLike() {
+  clickedLike(ev: MouseEvent, numero) {
+    console.log("cliccato like!", this.isLiked);
     this.isLiked = !this.isLiked;
+
+    console.log("Dopo click", ev.x, ev.y);
+    ev.preventDefault();
   }
 
   constructor() { }

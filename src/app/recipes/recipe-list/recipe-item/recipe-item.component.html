@@ -1,10 +1,4 @@
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" [src]="currentRicetta.imagePath">
-    <div class="card-body">
-        <h5 class="card-title">{{currentRicetta.name}}</h5>
-        <p class="card-text">{{currentRicetta.description}}</p>
-        <a href="#" class="btn btn-primary">
-            <app-like [isLiked]="currentRicetta.liked"></app-like>
-        </a>
-    </div>
-</div>
+<li class="list-group-item" (click)="onSelectedItem()">
+    <img class="card-img-top" [src]="currentRicetta.imagePath" style="width: 100px;height: auto;">
+    <h5 class="card-title">{{currentRicetta.name}} </h5>
+</li>
