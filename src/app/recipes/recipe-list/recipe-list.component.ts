@@ -19,7 +19,15 @@ export class RecipeListComponent implements OnInit {
   }
 
   constructor(private recipesService: RecipesService) {
-    this.recipes = recipesService.recipes;
+    recipesService.newRecipes.subscribe(
+      (ricetteAggiornate) => {
+        console.log("ricetteAggiornate", ricetteAggiornate);
+        this.recipes = ricetteAggiornate;
+      },
+      function(error){
+        console.error(error);
+      }
+    );
    }
 
   ngOnInit() {
