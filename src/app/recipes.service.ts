@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class RecipesService {
 
-
   URL = "https://www.themealdb.com/api/json/v1/1/search.php?s=cake";
 
 
@@ -26,10 +25,6 @@ export class RecipesService {
     "https://loremflickr.com/640/340/food"
   );
 
-  ingredients = {
-    nome: "Aglio",
-    peso: "5g"
-  };
 
    recipes: Recipe[] = [
     this.ricetta,
@@ -37,33 +32,39 @@ export class RecipesService {
     this.ricetta3
   ];
 
-  recipeChanged = new EventEmitter<Recipe>();
+ // recipeChanged = new EventEmitter<Recipe>();
   selectedRecipe: Recipe = null;
 
   public changeSelectedRecipe(ricetta: Recipe) {
     console.log("changeSelectedRecipe", ricetta);
     this.selectedRecipe = ricetta;
-   // this.recipes.push(this.ricetta3);
-   this.recipeChanged.emit(this.selectedRecipe);
+   //this.recipeChanged.emit(this.selectedRecipe);
   }
 
-  public getRecipe() {
+ /* public getRecipe() {
     return this.selectedRecipe;
   }
 
+*/
 
-  searchRecipes = () => {
-    return this.http.get(this.URL);
+
+  constructor(private http: HttpClient) {  }
+
+
+
+  searchRecipes () {
+    const response = this.http.get(this.URL)
+    .toPromise()
+    /*.then(function(recipes){
+    })*/
+    .then(recipes => {
+      console.log("Ricette ricevute", recipes);
+    })
+    .catch(err =>{
+      console.error("ERRORE!!!", err );
+    });
+
 
   }
 
-  constructor(private http: HttpClient) {
-    const ricette = this.searchRecipes().subscribe(
-      response => {
-        console.log(response);
-        return response;
-      },
-      err => { console.error(err); }
-    );
-  }
 }

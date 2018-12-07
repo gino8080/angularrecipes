@@ -18,17 +18,16 @@ export class AppComponent implements OnInit {
   }
 
 constructor(private serv: RecipesService) {
-  this.serv.recipeChanged.subscribe(
+  /*this.serv.recipeChanged.subscribe(
     (newRecipe: Recipe) => {
       console.log("new Recipe", newRecipe);
       this.selectedRecipe = this.serv.selectedRecipe;
     }
   );
-
+*/
 }
 
   ngOnInit() {
-
-
+    this.serv.searchRecipes();
   }
 }
