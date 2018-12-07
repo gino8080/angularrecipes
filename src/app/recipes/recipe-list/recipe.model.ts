@@ -1,14 +1,18 @@
 export class Recipe {
-  public name: string;
-  public description: string;
-  public imagePath: string;
-  public liked: boolean;
 
-  constructor(name: string, desc: string, imagePath: string,
-  liked: boolean= false) {
+  constructor(
+    public name: string,
+    public description: string,
+    public imagePath: string,
+    public liked: boolean= false,
+    public createdAt: Date = new Date(),
+    public tags: string[] = []
+    ) {
     this.name = name;
-    this.description = desc;
+    this.description = description;
     this.imagePath = imagePath;
     this.liked = liked;
+    this.createdAt = createdAt;
+    this.tags = tags;
   }
 }

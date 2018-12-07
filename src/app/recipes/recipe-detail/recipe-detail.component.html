@@ -1,6 +1,7 @@
-<div *ngIf="currentRicetta" class="card" style="width: 18rem;">
+<div *ngIf="currentRicetta" class="card">
     <img class="card-img-top" [src]="currentRicetta.imagePath">
     <div class="card-body">
+        <span>{{currentRicetta.createdAt | date : "MMMM - hh:mm"  }}</span>
         <h5 class="card-title">{{currentRicetta.name}} </h5>
         <p class="card-text">{{currentRicetta.description}}</p>
         <app-like [isLiked]="currentRicetta.liked"></app-like>
