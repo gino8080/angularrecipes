@@ -5,3 +5,7 @@
     <app-recipe-item *ngFor="let ricetta of recipes;" [currentRicetta]="ricetta" (selectedRecipe)="onSelectedList($event)"> </app-recipe-item>
 
 </ul>
+
+<pre>
+{{ recipes | json }}
+</pre>

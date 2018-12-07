@@ -14,6 +14,8 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { LikeComponent } from './like/like.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { AbstractPipe } from './abstract.pipe';
+import { RecipesComponent } from './recipes/recipes.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { AbstractPipe } from './abstract.pipe';
     RecipeItemComponent,
     LikeComponent,
     RecipeDetailComponent,
-    AbstractPipe
+    AbstractPipe,
+    RecipesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
